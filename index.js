@@ -5,7 +5,16 @@ function hasTargetSum(array, target) {
 /* 
   Write the Big O time complexity of your function here
 */
-
+const testedValues = [];{
+    for (let i = 0; i < array.length; i++) {
+      const currentValue = array[i];
+      if (testedValues.includes(target - currentValue)) {
+        return true;
+      }
+      testedValues.push(currentValue);
+    }
+    return false;
+}
 /* 
   Add your pseudocode here
 */
